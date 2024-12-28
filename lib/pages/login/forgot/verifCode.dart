@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:samdoctor/pages/login/forgot/reset.dart';
 
 class Verifcode extends StatefulWidget {
   const Verifcode({super.key});
@@ -9,6 +10,15 @@ class Verifcode extends StatefulWidget {
 }
 
 class _VerifcodeState extends State<Verifcode> {
+  void _isVerifCod() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) {
+        return Reset();
+      }),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -184,19 +194,22 @@ class _VerifcodeState extends State<Verifcode> {
               SizedBox(
                 height: 120,
               ),
-        
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 52,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.blue,
+
+              GestureDetector(
+                onTap: _isVerifCod,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 52,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue,
+                  ),
+                  child: Center(
+                      child: Text(
+                    "Confirm",
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  )),
                 ),
-                child: Center(
-                    child: Text(
-                  "Confirm",
-                  style: TextStyle(color: Colors.white, fontSize: 15),
-                )),
               )
             ],
           ),
