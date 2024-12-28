@@ -46,11 +46,10 @@ class _SignupPageState extends State<SignupPage> {
     });
     String email = _emilcontroller.text;
     if (email.contains("@gmail.com")) {
-    
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("Iltimos, email toʻgʻri kiriting!"),
+          content: Text("Iltimos, barcha maydonlarni to'ldiring!"),
         ),
       );
     }
@@ -60,16 +59,16 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(250, 250, 250, 250),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-         centerTitle: true,
-        title:
-          Text(
-            "Let's Sign Up ",
-            style: TextStyle(
-              fontSize: 21,
-            ),
+        centerTitle: true,
+        title: Text(
+          "Let's Sign Up ",
+          style: TextStyle(
+            fontSize: 21,
           ),
+        ),
         //),
       ),
       body: SingleChildScrollView(
@@ -195,7 +194,7 @@ class _SignupPageState extends State<SignupPage> {
                       height: 52,
                       child: const Center(
                         child: Text(
-                          "Sign In",
+                          "Sign Up",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,

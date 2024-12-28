@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:samdoctor/pages/login/forgot/otp.dart';
-//import 'package:samdoctor/pages/login/forgot/verifCode.dart';
+import 'package:samdoctor/pages/login/forgot/verifCode.dart';
 
 class ForgatPage extends StatefulWidget {
   const ForgatPage({super.key});
@@ -23,20 +22,20 @@ class _ForgatPageState extends State<ForgatPage> {
       _isEmailValid = _isValidEmail(_emilcontroller.text);
     });
 
-    // Navigator.push(context, MaterialPageRoute(builder: (context) {
-    //   return OTPInputScreen();
-    // }));
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return Verifcode();
+    }));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(250, 250, 250, 250),
       appBar: AppBar(
-         centerTitle: true,
-        title: 
-           Text(
-            "Forgot Password",
-          ),
+        centerTitle: true,
+        title: Text(
+          "Forgot Password",
+        ),
       ),
       body: Container(
         padding: EdgeInsets.only(top: 30),
@@ -82,7 +81,7 @@ class _ForgatPageState extends State<ForgatPage> {
                 decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(10)),
-                width: 342,
+               width: MediaQuery.of(context).size.width,
                 height: 52,
                 child: const Center(
                   child: Text(
