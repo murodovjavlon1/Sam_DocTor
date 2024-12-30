@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:samdoctor/pages/home/main/asosiy.dart';
 import 'package:samdoctor/pages/login/forgot/forgat_page.dart';
 import 'package:samdoctor/pages/login/signUp_page.dart';
 
@@ -39,9 +40,11 @@ class _SigninPageState extends State<SigninPage> {
 
     // Agar ikkala maydon ham to'g'ri bo'lsa
     if (_isEmailValid && _isPasswordValid) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Tizimga muvaffaqiyatli kirildi!")),
-      );
+      Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const Asosiy()),
+              (route) => false, // Barcha eski sahifalarni yo'q qiladi
+            );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Iltimos, barcha maydonlarni to'ldiring!")),
